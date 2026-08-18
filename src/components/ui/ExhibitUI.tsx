@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from 'framer-motion'
-import { type PartType, PART_DATA } from '../../types'
+import { motion } from 'framer-motion'
+import type { PartType } from '../../types'
 import { playChord } from '../../utils/audio'
 
 export function ExhibitHeader({ activePart, onPartSelect, selectedProject, onHomeClick }: { activePart: PartType | null, onPartSelect: (p: PartType | null) => void, selectedProject?: any, onHomeClick?: () => void }) {

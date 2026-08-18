@@ -1,9 +1,7 @@
-import { Suspense, useEffect, useState, useMemo } from 'react'
-import { useGLTF, Center, useCursor, Html } from '@react-three/drei'
+import { Suspense } from 'react'
+import { useGLTF, Center, Html } from '@react-three/drei'
 import { ErrorBoundary } from '../ErrorBoundary'
 import { ProceduralGuitar } from './ProceduralGuitar'
-import * as THREE from 'three'
-import { useFrame } from '@react-three/fiber'
 import type { PartType } from '../../types'
 import { projectsData, SingleProjectCard, contactsData, SingleContactCard, AboutCard } from '../ui/ARCards'
 
@@ -22,7 +20,7 @@ function HotspotCard({ position, part, activePart }: { position: [number, number
   )
 }
 
-function GLTFGuitar({ url, activePart, onPartSelect, onProjectSelect }: { url: string, activePart: PartType | null, onPartSelect: (p: PartType | null) => void, onProjectSelect?: (project: any) => void }) {
+function GLTFGuitar({ url, activePart, onProjectSelect }: { url: string, activePart: PartType | null, onPartSelect: (p: PartType | null) => void, onProjectSelect?: (project: any) => void }) {
   const { nodes, materials } = useGLTF(url) as any
 
   return (
@@ -59,7 +57,7 @@ function GLTFGuitar({ url, activePart, onPartSelect, onProjectSelect }: { url: s
       <HotspotCard position={[-1.5, 0, 0.4]} part="soundhole" activePart={activePart} />
 
       {/* Spatial Contacts along the headstock/tuners */}
-      {activePart === 'headstock' && contactsData.map((contact, i) => {
+      {activePart === 'headstock' && contactsData.map((contact: any, i: number) => {
         // Distribute along the headstock (X from ~2.0 to ~2.5)
         const xPos = 2.0 + (i * 0.25)
         // Alternate top and bottom tuning pegs
@@ -76,7 +74,7 @@ function GLTFGuitar({ url, activePart, onPartSelect, onProjectSelect }: { url: s
       })}
 
       {/* Spatial Projects along the fretboard */}
-      {activePart === 'fretboard' && projectsData.map((project, i) => {
+      {activePart === 'fretboard' && projectsData.map((project: any, i: number) => {
         // Distribute along the neck (X from ~0.2 to ~1.8)
         const xPos = 0.3 + (i * 0.45)
         // Alternate top and bottom of the neck

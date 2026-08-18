@@ -57,8 +57,8 @@ export function ProceduralGuitar() {
         <group>
           {[-1, 1].map((side) => 
             Array.from({ length: 3 }).map((_, i) => (
-              <mesh key={`peg-${side}-${i}`} position={[side * 0.25, 2.6 + i * 0.15, 0.05]} material={metalMaterial}>
-                <cylinderGeometry args={[0.04, 0.04, 0.2]} rotation={[0, 0, Math.PI / 2]} />
+              <mesh key={`peg-${side}-${i}`} position={[side * 0.25, 2.6 + i * 0.15, 0.05]} rotation={[0, 0, Math.PI / 2]} material={metalMaterial}>
+                <cylinderGeometry args={[0.04, 0.04, 0.2]} />
               </mesh>
             ))
           )}

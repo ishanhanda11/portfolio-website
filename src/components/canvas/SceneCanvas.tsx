@@ -29,7 +29,6 @@ function DynamicCamera({ activePart }: { activePart: PartType | null }) {
       makeDefault 
       minDistance={2} 
       maxDistance={20} 
-      enablePan={true}
     />
   )
 }
