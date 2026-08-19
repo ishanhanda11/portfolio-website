@@ -62,7 +62,10 @@ function GLTFGuitar({ url, activePart, onProjectSelect }: { url: string, activeP
         const xPos = 2.0 + (i * 0.25)
         // Alternate top and bottom tuning pegs
         const isTop = i % 2 === 0
-        const yPos = isTop ? 0.2 : -0.2
+        let yPos = isTop ? 0.2 : -0.2
+        if (i === 1) {
+          yPos = 0.04 // Move GitHub card slightly more to touch the bottom string
+        }
         
         return (
           <group key={`contact-${i}`} position={[xPos, yPos, 0.4]}>
@@ -79,8 +82,14 @@ function GLTFGuitar({ url, activePart, onProjectSelect }: { url: string, activeP
         const xPos = 0.3 + (i * 0.45)
         // Alternate top and bottom of the neck
         const isTop = i % 2 === 0
+        
         // Offset Y slightly so the pointer line starts clearly outside the neck mesh
-        const yPos = isTop ? 0.3 : -0.3
+        let yPos = isTop ? 0.3 : -0.3
+        if (i === 1) {
+          yPos = -0.08 // TaskTrackerApp
+        } else if (i === 3) {
+          yPos = 0.0 // Real-Time Chat (moved a little more above)
+        }
         
         return (
           <group key={i} position={[xPos, yPos, 0.4]}>

@@ -86,6 +86,11 @@ export const contactsData = [
 ]
 
 export function SingleProjectCard({ project, index, isTop, onClick }: { project: any, index: number, isTop: boolean, onClick?: () => void }) {
+  const isLeft = index === 0 || index === 1;
+  const hoverClasses = isLeft 
+    ? "hover:translate-x-[calc(-50%-12px)]" 
+    : "hover:translate-x-[calc(-50%+12px)]";
+
   return (
     <div className="relative pointer-events-auto">
       <motion.div 
@@ -99,7 +104,7 @@ export function SingleProjectCard({ project, index, isTop, onClick }: { project:
         initial={{ opacity: 0, scale: 0.95, y: isTop ? 10 : -10 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.8, delay: index * 0.2 + 0.4, ease: "easeOut" }}
-        className={`absolute left-1/2 -translate-x-1/2 ${isTop ? 'bottom-[60px]' : 'top-[60px]'} w-[180px] sm:w-[200px] bg-canvas-light/95 backdrop-blur-xl border border-chrome/40 rounded-sm p-3 shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)] cursor-pointer hover:border-gold/60 transition-all duration-700 group`}
+        className={`absolute left-1/2 -translate-x-1/2 ${isTop ? 'bottom-[60px]' : 'top-[60px]'} w-[180px] sm:w-[200px] bg-gradient-to-br from-canvas-light/95 via-[#232323]/95 to-[#121212]/95 backdrop-blur-xl border-t border-t-white/20 border-l border-l-white/10 border-r-[4px] border-r-black/60 border-b-[6px] border-b-black/80 rounded-lg p-3 shadow-[15px_35px_60px_-10px_rgba(0,0,0,1),5px_15px_25px_rgba(0,0,0,0.8),inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-5px_8px_rgba(0,0,0,0.6)] cursor-pointer hover:border-r-gold/60 hover:border-b-gold/70 hover:-translate-y-2 ${hoverClasses} transition-all duration-700 group`}
         onClick={onClick}
       >
         <div className="flex items-center justify-between mb-3 border-b border-chrome/30 pb-2">
@@ -124,6 +129,11 @@ export function SingleProjectCard({ project, index, isTop, onClick }: { project:
 }
 
 export function SingleContactCard({ contact, index, isTop }: { contact: any, index: number, isTop: boolean }) {
+  let hoverClasses = "";
+  if (index === 0) hoverClasses = "hover:translate-x-[calc(-50%-12px)]"; // LinkedIn floats left
+  else if (index === 2) hoverClasses = "hover:translate-x-[calc(-50%+12px)]"; // LeetCode floats right
+  // GitHub (index 1) just floats up by default
+
   return (
     <div className="relative pointer-events-auto">
       <motion.div 
@@ -137,7 +147,7 @@ export function SingleContactCard({ contact, index, isTop }: { contact: any, ind
         initial={{ opacity: 0, scale: 0.95, y: isTop ? 10 : -10 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.8, delay: index * 0.2 + 0.4, ease: "easeOut" }}
-        className={`absolute left-1/2 -translate-x-1/2 ${isTop ? 'bottom-[50px]' : 'top-[50px]'} flex items-center gap-2 sm:gap-3 w-auto min-w-[120px] sm:min-w-[140px] bg-canvas-light/95 backdrop-blur-xl border border-chrome/40 rounded-sm p-2 sm:p-3 px-3 sm:px-5 shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)] cursor-pointer hover:border-gold/60 transition-all duration-700 group`}
+        className={`absolute left-1/2 -translate-x-1/2 ${isTop ? 'bottom-[50px]' : 'top-[50px]'} flex items-center gap-2 sm:gap-3 w-auto min-w-[120px] sm:min-w-[140px] bg-gradient-to-br from-canvas-light/95 via-[#232323]/95 to-[#121212]/95 backdrop-blur-xl border-t border-t-white/20 border-l border-l-white/10 border-r-[4px] border-r-black/60 border-b-[6px] border-b-black/80 rounded-lg p-2 sm:p-3 px-3 sm:px-5 shadow-[15px_35px_60px_-10px_rgba(0,0,0,1),5px_15px_25px_rgba(0,0,0,0.8),inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-2px_-5px_8px_rgba(0,0,0,0.6)] cursor-pointer hover:border-r-gold/60 hover:border-b-gold/70 hover:-translate-y-2 ${hoverClasses} transition-all duration-700 group`}
       >
         <a href={contact.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 w-full text-muted group-hover:text-gold transition-colors duration-500">
           <div className="flex items-center justify-center">
@@ -156,7 +166,7 @@ export function AboutCard() {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[320px] bg-canvas-light/95 backdrop-blur-xl border border-chrome/40 rounded-sm p-4 sm:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)] pointer-events-auto"
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[320px] bg-gradient-to-br from-canvas-light/95 via-[#232323]/95 to-[#121212]/95 backdrop-blur-xl border-t border-t-white/20 border-l border-l-white/10 border-r-[5px] border-r-black/60 border-b-[8px] border-b-black/80 rounded-xl p-4 sm:p-6 shadow-[20px_45px_70px_-10px_rgba(0,0,0,1),10px_20px_30px_rgba(0,0,0,0.8),inset_2px_2px_4px_rgba(255,255,255,0.1),inset_-3px_-6px_10px_rgba(0,0,0,0.7)] pointer-events-auto"
     >
       <div className="flex items-center gap-3 mb-6 border-b border-chrome/30 pb-3">
         <div className="w-1.5 h-1.5 bg-gold rounded-full" />
