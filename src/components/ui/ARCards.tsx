@@ -164,16 +164,13 @@ export function AboutCard() {
       </div>
       <div className="text-[13px] text-muted leading-relaxed font-sans font-light mb-4 sm:mb-8 space-y-3 sm:space-y-4">
         <p>
-          Hi, I'm <strong className="font-medium text-ivory tracking-wide">Ishan Handa</strong>, a full-stack developer passionate about building modern web applications and exploring new technologies.
+          Hi, I'm <strong className="font-medium text-ivory tracking-wide">Ishan Handa</strong>, a BCA graduate and full-stack developer passionate about building modern web applications and exploring new technologies.
         </p>
         <p className="hidden sm:block">
           I enjoy building projects that combine <strong className="font-medium text-ivory tracking-wide">backend development, real-time systems, authentication, AI integration, and databases</strong> to create interactive and meaningful user experiences.
         </p>
-        <p className="hidden sm:block">
-          My goal is simple: keep learning, keep building, and continuously improve as a developer. I'm always looking for opportunities to solve challenging problems and turn ideas into practical applications.
-        </p>
-        <p className="block sm:hidden">
-          I specialize in <strong className="font-medium text-ivory tracking-wide">real-time systems, AI, and backend architectures</strong>.
+        <p>
+          <strong className="font-medium text-ivory tracking-wide">Tech Stack:</strong> Node.js, Express, React, PostgreSQL
         </p>
         <p className="pt-1 sm:pt-2">
           <strong className="font-medium text-ivory tracking-wide">Let's connect.</strong>
