@@ -31,9 +31,9 @@ const LeetCodeIcon = () => (
 )
 
 export const projectsData = [
-  { 
-    title: 'GenAI Interview Report Generator', 
-    desc: 'AI app with auth that turns a resume & job description into a structured interview prep report using Google Gemini AI.', 
+  {
+    title: 'GenAI Interview Report Generator',
+    desc: 'AI app with auth that turns a resume & job description into a structured interview prep report using Google Gemini AI.',
     github: 'https://github.com/ishanhanda11/GenAI-Project',
     detailedContent: [
       'A full-stack AI app that analyzes resumes and job descriptions using Google Gemini AI to generate structured interview prep reports.',
@@ -42,10 +42,10 @@ export const projectsData = [
     ],
     images: ['/projects/genai_app.png']
   },
-  { 
-    title: 'TaskTrackerApp', 
-    desc: 'MERN-stack task tracker with authentication and a live deployed demo.', 
-    github: 'https://github.com/ishanhanda11/TaskTrackerApp', 
+  {
+    title: 'TaskTrackerApp',
+    desc: 'MERN-stack task tracker with authentication and a live deployed demo.',
+    github: 'https://github.com/ishanhanda11/TaskTrackerApp',
     demo: 'https://task-tracker-app-red-omega.vercel.app/login',
     detailedContent: [
       'A MERN-stack task management application with a responsive interface for organizing personal tasks in real time.',
@@ -54,9 +54,9 @@ export const projectsData = [
     ],
     images: []
   },
-  { 
-    title: 'Full-Authentication-System', 
-    desc: 'Complete auth system with JWT cookies, OTP-based email verification, and password reset.', 
+  {
+    title: 'Full-Authentication-System',
+    desc: 'Complete auth system with JWT cookies, OTP-based email verification, and password reset.',
     github: 'https://github.com/ishanhanda11/Full-Authentication-System',
     detailedContent: [
       'A production-ready authentication system demonstrating secure user-management practices.',
@@ -65,10 +65,10 @@ export const projectsData = [
     ],
     images: []
   },
-  { 
-    title: 'Real-Time Chat Application', 
-    desc: 'MERN + Socket.io chat app with live messaging, presence tracking, typing indicators, and read receipts.', 
-    github: 'https://github.com/ishanhanda11/real-time-chat-application', 
+  {
+    title: 'Real-Time Chat Application',
+    desc: 'MERN + Socket.io chat app with live messaging, presence tracking, typing indicators, and read receipts.',
+    github: 'https://github.com/ishanhanda11/real-time-chat-application',
     demo: 'https://real-time-chat-application-lovat.vercel.app/',
     detailedContent: [
       'A high-performance real-time chat platform built with the MERN stack and Socket.io.',
@@ -87,13 +87,13 @@ export const contactsData = [
 
 export function SingleProjectCard({ project, index, isTop, onClick }: { project: any, index: number, isTop: boolean, onClick?: () => void }) {
   const isLeft = index === 0 || index === 1;
-  const hoverClasses = isLeft 
-    ? "hover:translate-x-[calc(-50%-12px)]" 
+  const hoverClasses = isLeft
+    ? "hover:translate-x-[calc(-50%-12px)]"
     : "hover:translate-x-[calc(-50%+12px)]";
 
   return (
     <div className="relative pointer-events-auto">
-      <motion.div 
+      <motion.div
         initial={{ height: 0, opacity: 0 }}
         animate={{ height: 60, opacity: 1 }}
         transition={{ duration: 1.2, delay: index * 0.2, ease: "easeInOut" }}
@@ -136,7 +136,7 @@ export function SingleContactCard({ contact, index, isTop }: { contact: any, ind
 
   return (
     <div className="relative pointer-events-auto">
-      <motion.div 
+      <motion.div
         initial={{ height: 0, opacity: 0 }}
         animate={{ height: 50, opacity: 1 }}
         transition={{ duration: 1.2, delay: index * 0.2, ease: "easeInOut" }}
@@ -186,7 +186,7 @@ export function AboutCard() {
           <strong className="font-medium text-ivory tracking-wide">Let's connect.</strong>
           <br className="hidden sm:block" />
           <strong className="font-medium text-ivory tracking-wide sm:hidden"> Email:</strong>
-          <strong className="font-medium text-ivory tracking-wide hidden sm:inline">Email:</strong> <a href="mailto:ishanahanda7733@gmail.com" className="text-gold hover:text-amber transition-colors ml-1">ishanahanda7733@gmail.com</a>
+          <strong className="font-medium text-ivory tracking-wide hidden sm:inline">Email:</strong> <a href="mailto:ishanhanda7733@gmail.com" className="text-gold hover:text-amber transition-colors ml-1">ishanahanda7733@gmail.com</a>
         </p>
       </div>
       <div className="flex items-center gap-2">
