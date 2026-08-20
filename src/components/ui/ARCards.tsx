@@ -186,7 +186,7 @@ export function AboutCard() {
           <strong className="font-medium text-ivory tracking-wide">Let's connect.</strong>
           <br className="hidden sm:block" />
           <strong className="font-medium text-ivory tracking-wide sm:hidden"> Email:</strong>
-          <strong className="font-medium text-ivory tracking-wide hidden sm:inline">Email:</strong> <a href="mailto:ishanhanda7733@gmail.com" className="text-gold hover:text-amber transition-colors ml-1">ishanahanda7733@gmail.com</a>
+          <strong className="font-medium text-ivory tracking-wide hidden sm:inline">Email:</strong> <a href="mailto:ishanhanda7733@gmail.com" className="text-gold hover:text-amber transition-colors ml-1">ishanhanda7733@gmail.com</a>
         </p>
       </div>
       <div className="flex items-center gap-2">
