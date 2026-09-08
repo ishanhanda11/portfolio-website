@@ -55,15 +55,16 @@ export const projectsData = [
     images: []
   },
   {
-    title: 'Full-Authentication-System',
-    desc: 'Complete auth system with JWT cookies, OTP-based email verification, and password reset.',
-    github: 'https://github.com/ishanhanda11/Full-Authentication-System',
+    title: 'AI Build With Me',
+    desc: 'Adaptive AI coding mentor platform where developers learn by building real projects with dynamic guidance.',
+    github: 'https://github.com/ishanhanda11/build-with-me',
+    demo: 'https://build-with-me-sable.vercel.app',
     detailedContent: [
-      'A production-ready authentication system demonstrating secure user-management practices.',
-      'Features registration and login using JWT in HTTP-only cookies, automated OTP email verification, and a secure password-reset flow.',
-      'Built on Prisma ORM and PostgreSQL with comprehensive frontend and backend validation.'
+      'An adaptive coding-learning platform acting as a 1-on-1 AI coding mentor, guiding developers to build real-world projects rather than copying AI-generated code.',
+      'Features progressive assistance (Hint → Stronger Hint → Pseudocode → Solution) that analyzes learner behavior, attempts, and time spent to personalize subsequent challenges.',
+      'Engineered with React, Monaco Editor, and a custom Dark Nordic design system on the frontend, backed by Node.js/Express, Prisma ORM, PostgreSQL, and Google Gemini API integration.'
     ],
-    images: []
+    images: ['/projects/build-with-me.png']
   },
   {
     title: 'Real-Time Chat Application',
